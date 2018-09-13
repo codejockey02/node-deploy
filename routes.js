@@ -3,11 +3,11 @@
 const auth = require('basic-auth');
 const jwt = require('jsonwebtoken');
 
-const register = require('../functions/register.js');
-const login = require('../functions/login.js');
-const profile = require('../functions/profile.js');
-const password = require('../functions/password.js');
-const config = require('../config/config.json');
+const register = require('./functions/register.js');
+const login = require('./functions/login.js');
+const profile = require('./functions/profile.js');
+const password = require('./functions/password.js');
+const config = require('./config/config.json');
 
 module.exports = router => {
 
