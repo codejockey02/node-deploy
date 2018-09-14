@@ -7,11 +7,13 @@ const register = require('./functions/register.js');
 const login = require('./functions/login.js');
 const profile = require('./functions/profile.js');
 const password = require('./functions/password.js');
-const config = require('./config/config.json');
+//const config = require('./config/config.json');
+
+const config = JSON.parse(jsonminify(fs.readFileSync('config.json', 'utf8')));
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.render('config.json'));
+	router.get('/', (req, res) => res.status(200).send('config');
 
 	router.post('/authenticate', (req, res) => {
 
