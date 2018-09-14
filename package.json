@@ -13,7 +13,7 @@
     "morgan": "^1.7.0",
     "nodemailer": "^2.6.0",
     "randomstring": "^1.1.5",
-    "jsonminify": "^1.0.0",
+    "jsonminify": "^0.4.1",
     "fs": "^0.1.1"
   },
   "devDependencies": {},
