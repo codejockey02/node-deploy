@@ -11,7 +11,7 @@ const config = require('./config/config.json');
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.status(200).send("sdjhasd"));
+	router.get('/', (req, res) => res.render(./config/config.json));
 
 	router.post('/authenticate', (req, res) => {
 
