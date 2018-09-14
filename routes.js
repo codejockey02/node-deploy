@@ -14,7 +14,7 @@ const config = JSON.parse(jsonminify(fs.readFileSync('config.json', 'utf8')));
 
 module.exports = router => {
 
-	router.get('/', (req, res) => res.status(200).send('config'));
+	router.get('/', (req, res) => res.status(200).send(config));
 
 	router.post('/authenticate', (req, res) => {
 
