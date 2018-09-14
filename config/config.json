@@ -1,13 +1,14 @@
-[{
+[
+    {
     "name" : "Your name",
     "email" : "YourEmail@gmail.com",
     "password" : "Your Email Password",
     "secret" : "Learn2Crack"
-},
-{
+    },
+    {
     "name" : "Priyesh",
     "email" : "priyeshs2@gmail.com",
     "password" : "1234",
     "secret" : "Learn2Crack"
-}
+    }
 ]

@@ -2,7 +2,8 @@
 
 const auth = require('basic-auth');
 const jwt = require('jsonwebtoken');
-
+const fs = require('fs');
+const jsonminify = require('jsonminify');
 const register = require('./functions/register.js');
 const login = require('./functions/login.js');
 const profile = require('./functions/profile.js');
