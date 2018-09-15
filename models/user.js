@@ -1,6 +1,8 @@
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/node-login')
+//mongoose.connect('mongodb://localhost/node-login')
+
+mongoose.connect('mongodb://<ianant>:<Priyesh@98>@ds149672.mlab.com:49672/node-login')
     .then(()=> console.log("Connected to MongoDB..."))
     .catch(err => console.error("Could Not Connect...",err));
 
