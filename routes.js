@@ -17,8 +17,8 @@ module.exports = router => {
 	router.get('/', (req, res) => res.status(200).send(config));
 
 	router.post('/authenticate', (req, res) => {
-
-		const credentials = auth(req);
+		
+		const credentials = req.body.email;
 		console.log(credentials);
 
 		if (!credentials) {
