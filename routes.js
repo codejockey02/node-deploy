@@ -18,7 +18,7 @@ module.exports = router => {
 
 	router.post('/authenticate', (req, res) => {
 		
-		const credentials = req.body.email;
+		const credentials = auth(req);
 		console.log(credentials);
 
 		if (!credentials) {
