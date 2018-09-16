@@ -14,7 +14,8 @@
     "nodemailer": "^2.6.0",
     "randomstring": "^1.1.5",
     "jsonminify": "^0.4.1",
-    "fs": "*"
+    "fs": "*",
+    "body-parser": "*"
   },
   "devDependencies": {},
   "scripts": {
