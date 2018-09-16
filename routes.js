@@ -9,12 +9,12 @@ const login = require('./functions/login.js');
 const profile = require('./functions/profile.js');
 const password = require('./functions/password.js');
 //const config = require('./config/config.json');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 const config = JSON.parse(jsonminify(fs.readFileSync('config.json', 'utf8')));
 
  
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 module.exports = router => {
 
