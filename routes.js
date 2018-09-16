@@ -43,9 +43,9 @@ module.exports = router => {
 
 	router.post('/users', (req, res) => {
 
-		const name = req.body.name;
-		const email = req.body.email;
-		const password = req.body.password;
+		const name = req.JSON.stringify(body).name;
+		const email = req.JSON.stringify(body).email;
+		const password = req.JSON.stringify(body).password;
 
 		if (!name || !email || !password || !name.trim() || !email.trim() || !password.trim()) {
 
