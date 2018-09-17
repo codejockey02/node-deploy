@@ -43,7 +43,6 @@ module.exports = router => {
 
 	router.post('/users', (req, res) => {
 
-		JSON.stringify(body);
 		const name = req.body.name;
 		const email = req.body.email;
 		const password = req.body.password;
