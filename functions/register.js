@@ -1,17 +1,17 @@
 'use strict';
 
 const user = require('../models/user');
-const bcrypt = require('bcryptjs');
+/* const bcrypt = require('bcryptjs'); */
 
 exports.registerUser = (name, email, password) =>
     new Promise((resolve,reject) => {
-        const salt = bcrypt.genSaltSync(10);
-            const hash = bcrypt.hashSync(password, salt);
+        /* const salt = bcrypt.genSaltSync(10);
+            const hash = bcrypt.hashSync(password, salt); */
 
             const newUser = new user({
                 name: name,
                 email: email,
-                hashed_password: hash,
+                password: password,
                 created_at: new Date()
             });
 

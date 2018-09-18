@@ -18,16 +18,27 @@ module.exports = router => {
 
 	router.post('/authenticate', (req, res) => {
 		
-		const credentials = req;
+		const credentials = req.body.email;
 		console.log(credentials);
 
-		if (!credentials) {
+		const cred = user.find({email:credentials});
+
+		if (!cred) {
 
 			res.status(400).json({ message: 'Invalid Request !' });
 
 		} else {
 
-			login.loginUser(credentials.name, credentials.pass)
+			const pwd = req.body.password;
+			const veri = user.find({email: credentials, password: pwd });
+			
+			if(!veri) {
+				res.status(401).json({message: 'Password is incorrect'});
+			} else {
+				res.status(201).json({message: 'User Authenticated !'});
+			}
+		}
+			/* login.loginUser(credentials.name, credentials.pass)
 
 			.then(result => {
 
@@ -38,7 +49,7 @@ module.exports = router => {
 			})
 
 			.catch(err => res.status(err.status).json({ message: err.message }));
-		}
+		} */
 	});
 
 	router.post('/users', (req, res) => {
