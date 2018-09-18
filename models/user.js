@@ -9,7 +9,7 @@ mongoose.connect('mongodb://admin:papaishere123@ds149672.mlab.com:49672/node-log
 const userSchema = mongoose.Schema({
     name: String,
     email: String,
-    hashed_password: String,
+    password: String,
     created_at: String,
     temp_password: String,
     temp_password_time: String 
