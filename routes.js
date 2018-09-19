@@ -24,20 +24,21 @@ module.exports = router => {
 
 		const cred = user.find({email:credentials});
 
-		if (cred == null) {
+		if (cred == credentials) {
+			const pwd = req.body.password;
+			const veri = user.find({email: credentials, password: pwd });
 
-			res.status(400).json({ message: 'Invalid Request !' });
+			if(veri.password == pwd) {
+				res.status(201).json({message: 'User Authenticated !'});
+				
+			} else {
+				res.status(401).json({message: 'Password is incorrect'});
+			}
 
 		} else {
 
-			const pwd = req.body.password;
-			const veri = user.find({email: credentials, password: pwd });
+			res.status(400).json({ message: 'Invalid Request !' });
 			
-			if(veri == null) {
-				res.status(401).json({message: 'Password is incorrect'});
-			} else {
-				res.status(201).json({message: 'User Authenticated !'});
-			}
 		}
 			/* login.loginUser(credentials.name, credentials.pass)
 
