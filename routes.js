@@ -19,33 +19,34 @@ module.exports = router => {
 
 	router.post('/authenticate', (req, res) => {
 		
-		const credentials = req.body.email;
-		console.log(credentials);
+		async function(checking){
+			const credentials = req.body.email;
+			console.log(credentials);
 
-		const cred = user.collection.findOne({email:credentials},{email: 1})
-			.then(function(one){
-				console.log(cred);
+			const cred = await user.collection.findOne({email:credentials},{email: 1});
+			console.log(cred);
 		
 			if (cred == credentials) {
 				const pwd = req.body.password;
 				console.log(pwd);
 
-				const veri = user.colleciton.findOne({email: credentials, password: pwd },{password:1})
-					.then(function(check){
-						if(veri == pwd) {
-							res.status(201).json({message: 'User Authenticated !'});
-							
+				const veri = await user.colleciton.findOne({email: credentials, password: pwd },{password:1});
+					if(veri == pwd) {
+						res.status(201).json({message: 'User Authenticated !'});
 						} else {
 							res.status(401).json({message: 'Password is incorrect'});
-						}
-					});			
+						}			
 
 			} else {
 
 				res.status(400).json({ message: 'Invalid Request !' });
 				
 			}
+		}
+		checking();
+
 		});
+		
 			/* login.loginUser(credentials.name, credentials.pass)
 
 			.then(result => {
