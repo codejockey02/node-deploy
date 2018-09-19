@@ -23,12 +23,12 @@ module.exports = router => {
 		console.log(credentials);
 
 		const cred = user.find({email:credentials},{email: 1});
-		console.log(cred.email);
-		if (cred.email == credentials) {
+		console.log(cred);
+		if (cred == credentials) {
 			const pwd = req.body.password;
 			const veri = user.find({email: credentials, password: pwd },{password:1});
 
-			if(veri.password == pwd) {
+			if(veri == pwd) {
 				res.status(201).json({message: 'User Authenticated !'});
 				
 			} else {
