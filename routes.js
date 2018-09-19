@@ -22,11 +22,11 @@ module.exports = router => {
 		const credentials = req.body.email;
 		console.log(credentials);
 
-		const cred = user.findOne({email:credentials},{email: 1});
+		const cred = user.collection.findOne({email:credentials},{email: 1});
 		console.log(cred);
 		if (cred == credentials) {
 			const pwd = req.body.password;
-			const veri = user.findOne({email: credentials, password: pwd },{password:1});
+			const veri = user.colleciton.findOne({email: credentials, password: pwd },{password:1});
 
 			if(veri == pwd) {
 				res.status(201).json({message: 'User Authenticated !'});
