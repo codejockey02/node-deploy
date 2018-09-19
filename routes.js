@@ -24,7 +24,7 @@ module.exports = router => {
 
 		const cred = user.find({email:credentials});
 
-		if (!cred) {
+		if (cred == null) {
 
 			res.status(400).json({ message: 'Invalid Request !' });
 
@@ -33,7 +33,7 @@ module.exports = router => {
 			const pwd = req.body.password;
 			const veri = user.find({email: credentials, password: pwd });
 			
-			if(!veri) {
+			if(veri == null) {
 				res.status(401).json({message: 'Password is incorrect'});
 			} else {
 				res.status(201).json({message: 'User Authenticated !'});
