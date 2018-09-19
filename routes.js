@@ -23,7 +23,7 @@ module.exports = router => {
 		console.log(credentials);
 
 		const cred = user.find({email:credentials});
-
+		console.log(cred);
 		if (cred == credentials) {
 			const pwd = req.body.password;
 			const veri = user.find({email: credentials, password: pwd });
