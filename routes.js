@@ -19,7 +19,7 @@ module.exports = router => {
 
 	router.post('/authenticate', (req, res) => {
 		
-		async function(checking){
+		async function checking(){
 			const credentials = req.body.email;
 			console.log(credentials);
 
