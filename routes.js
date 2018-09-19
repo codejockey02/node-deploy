@@ -22,17 +22,16 @@ module.exports = router => {
 		const credentials = req.body.email;
 		console.log(credentials);
 
-		const cred = user.collection.findOne({email:credentials},{email: 1}
+		const cred = user.collection.findOne({email:credentials},{email: 1})
 			.then(function(one){
 				console.log(cred);
-			})
-			);
+			});
 		
 		if (cred == credentials) {
 			const pwd = req.body.password;
 			console.log(pwd);
 
-			const veri = user.colleciton.findOne({email: credentials, password: pwd },{password:1}
+			const veri = user.colleciton.findOne({email: credentials, password: pwd },{password:1})
 				.then(function(check){
 					if(veri == pwd) {
 						res.status(201).json({message: 'User Authenticated !'});
@@ -40,9 +39,7 @@ module.exports = router => {
 					} else {
 						res.status(401).json({message: 'Password is incorrect'});
 					}
-				})
-				
-				);
+				});			
 
 		} else {
 
