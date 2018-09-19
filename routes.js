@@ -8,6 +8,7 @@ const register = require('./functions/register.js');
 const login = require('./functions/login.js');
 const profile = require('./functions/profile.js');
 const password = require('./functions/password.js');
+const user = require('./models/user');
 //const config = require('./config/config.json');
 const config = JSON.parse(jsonminify(fs.readFileSync('config.json', 'utf8')));
 
